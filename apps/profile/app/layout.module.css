@@ -1,0 +1,292 @@
+.layoutParent{
+ display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+}
+.margins{
+  position: relative;
+
+  width: 100%;
+ 
+}
+.pageTitleContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+
+}
+.profileContainer{
+    margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+
+}
+.profile{
+  border-radius: 20px;
+  box-shadow:var(--box-shadow);
+  background: var(--main-content);
+  display: flex;
+  width: 90%;
+  height: 300px;
+  -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+}
+.avatarContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 300px;
+
+}
+.avatar{
+    background: var(--violet-400);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.aboutContainer{
+    padding:20px;
+  width: calc(100% - 250px);
+  height: 300px;
+  
+}
+.name{
+
+color:var(--text-color);
+  width: 100%;
+  height: 50px;
+ -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+}
+.about{
+  color:var(--text-color);
+
+  width: 100%;
+  height: 250px;
+ -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+}
+.parent{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+}
+.portfolioTitle{
+
+  color:var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+ -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+}
+
+
+.overviewContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 170px;
+  margin-bottom: 10px;
+}
+.overview{
+  width: 70%;
+  height: 150px;
+  border-radius: 20px;
+
+ background: var(--main-content);
+  border: 3px solid var(--violet-300);
+
+  box-shadow:0px 0px 5px 2px var(--violet-300);
+ -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+}
+.darkThemeContainer{
+  margin-top: 20px;
+  position: absolute;
+  bottom:0;
+  top:0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+}
+.darkThemeToggle{
+  
+  background: white;
+  width: 40px;
+  height: 40px;
+  margin-left: 50px;
+  border: none;
+  border: 2px solid white;
+  border-radius: 50%;
+  cursor:pointer;
+  box-shadow: var(--box-shadow);
+
+}
+
+.projectsContainer{
+
+ 
+    
+  width: 100%;
+
+  height: 700px;
+
+  display:flex;
+  justify-content: center;
+}
+.projectsContainerFullScreen{
+ position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 100%;
+ display:flex;
+  justify-content: center;
+}
+.projects{
+
+
+  border-radius: 20px 20px 20px 20px;
+
+  display:flex;
+  height: 100%;
+
+  width: 95%;
+box-shadow: var(--box-shadow);
+}
+.projectsFullScreen{
+  display:flex;
+  height: 100%;
+
+  background: var(--container);
+  width: 100%;
+box-shadow: var(--box-shadow);
+}
+
+.projectFullScreen{
+
+  position: relative;
+  height: 100%;
+width: 100%;
+overflow: scroll;
+}
+.project{
+
+  position: relative;
+    border-radius: 20px 20px 20px 20px;
+
+height: 100%;
+width: 100%;
+overflow: scroll;
+}
+.list{
+
+  z-index: 2;
+    display: none;
+  border-radius: 20px 0px 0px 20px;
+  height: 100%;
+  width: 20%;
+  background: var(--main-content);
+  border-right: 2px solid var(--gray-300);
+  /* background: black; */
+  box-shadow: 1px 0px 2px 1px var(black);
+ -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+}
+.windowButtonContainer{
+  padding-inline: 10px;
+  z-index: 5;
+
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+}
+.windowBurgerButton{
+  border:none;
+  background: none;
+  cursor: pointer;
+
+}
+.windowFullScreenButton{
+  width: 50px;
+  height: 50px;
+  
+  border:none;
+
+  background: none;
+  cursor: pointer;
+}
+.windowFullScreenButton:focus{
+  outline-color: var(--violet-400);
+}
+
+
+
+
+
+
+/* Ipad */
+@media screen and (min-width: 764px) {
+
+  
+}
+
+/*Ipad vertical - small laptop */
+@media screen and (min-width: 1024px) {
+  .profile{
+    width: 700px;
+  }
+  .overview{
+    width: 400px;
+  }
+ .list{
+  display: block;
+  }
+ 
+
+  
+  .project{
+
+  border-radius: 0px 20px 20px 0px;
+
+
+width: 80%;
+  }
+
+
+}
+
+/* Laptop - PC */ 
+@media screen and (min-width:1280px){
+
+}
