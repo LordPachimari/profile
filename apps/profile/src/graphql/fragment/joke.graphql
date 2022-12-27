@@ -1,0 +1,7 @@
+fragment Joke on Joke{
+    id
+    creatorId
+    content
+    createdAt
+    views
+}

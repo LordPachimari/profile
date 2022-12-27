@@ -1,0 +1,13 @@
+query JokeList($LastEvaluatedKey:JokesLastEvaluatedKey!){
+    jokeList(LastEvaluatedKey:$LastEvaluatedKey){
+        pageInfo{
+            hasNextPage
+            endCursor{
+                ...Joke
+            }
+        }
+        nodes{
+            ...Joke
+        }
+    }
+}

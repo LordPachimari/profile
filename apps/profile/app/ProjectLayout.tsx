@@ -58,7 +58,9 @@ export default function ProjectLayout({
         <div
           className={isFullScreen ? styles.projectsFullScreen : styles.projects}
         >
-          <div className={styles.list}></div>
+          <div
+            className={isFullScreen ? styles.listFullScreen : styles.list}
+          ></div>
 
           <div
             className={isFullScreen ? styles.projectFullScreen : styles.project}

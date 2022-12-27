@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useLmaoStore } from "../zustand/lmao";
+import { useLmaoStore } from "../src/zustand/lmao";
 import JokeList from "./JokeList";
 import styles from "./lmao.module.css";
 const LMAO = () => {

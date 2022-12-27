@@ -1,0 +1,5 @@
+query Joke($id:String){
+    joke(id:$id){
+        ...Joke
+    }
+}
