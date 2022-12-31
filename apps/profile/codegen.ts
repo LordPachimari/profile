@@ -8,7 +8,7 @@ const config: CodegenConfig = {
   generates: {
     "src/gql/": {
       preset: "client",
-      plugins: ["typescript-urql", "typescript-resolvers"]
+      plugins: ["typescript-resolvers"]
     }
   }
 };

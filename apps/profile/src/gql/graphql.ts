@@ -1,15 +1,12 @@
 /* eslint-disable */
 import { GraphQLResolveInfo, GraphQLScalarType, GraphQLScalarTypeConfig } from 'graphql';
 import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
-import gql from 'graphql-tag';
-import * as Urql from 'urql';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
 export type RequireFields<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> };
-export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -131,54 +128,6 @@ export const JokeFragmentDoc = {"kind":"Document","definitions":[{"kind":"Fragme
 export const CreateJokeDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"createJoke"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"input"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"JokeInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createJoke"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"Variable","name":{"kind":"Name","value":"input"}}}]}]}}]} as unknown as DocumentNode<CreateJokeMutation, CreateJokeMutationVariables>;
 export const JokeDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Joke"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"id"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"joke"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"id"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Joke"}}]}}]}},...JokeFragmentDoc.definitions]} as unknown as DocumentNode<JokeQuery, JokeQueryVariables>;
 export const JokeListDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"JokeList"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"LastEvaluatedKey"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"JokesLastEvaluatedKey"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"jokeList"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"LastEvaluatedKey"},"value":{"kind":"Variable","name":{"kind":"Name","value":"LastEvaluatedKey"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pageInfo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"hasNextPage"}},{"kind":"Field","name":{"kind":"Name","value":"endCursor"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Joke"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"nodes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Joke"}}]}}]}}]}},...JokeFragmentDoc.definitions]} as unknown as DocumentNode<JokeListQuery, JokeListQueryVariables>;
-export const JokeFragmentDoc = gql`
-    fragment Joke on Joke {
-  id
-  creatorId
-  content
-  createdAt
-  views
-}
-    `;
-export const CreateJokeDocument = gql`
-    mutation createJoke($input: JokeInput!) {
-  createJoke(input: $input)
-}
-    `;
-
-export function useCreateJokeMutation() {
-  return Urql.useMutation<CreateJokeMutation, CreateJokeMutationVariables>(CreateJokeDocument);
-};
-export const JokeDocument = gql`
-    query Joke($id: String) {
-  joke(id: $id) {
-    ...Joke
-  }
-}
-    ${JokeFragmentDoc}`;
-
-export function useJokeQuery(options?: Omit<Urql.UseQueryArgs<JokeQueryVariables>, 'query'>) {
-  return Urql.useQuery<JokeQuery, JokeQueryVariables>({ query: JokeDocument, ...options });
-};
-export const JokeListDocument = gql`
-    query JokeList($LastEvaluatedKey: JokesLastEvaluatedKey!) {
-  jokeList(LastEvaluatedKey: $LastEvaluatedKey) {
-    pageInfo {
-      hasNextPage
-      endCursor {
-        ...Joke
-      }
-    }
-    nodes {
-      ...Joke
-    }
-  }
-}
-    ${JokeFragmentDoc}`;
-
-export function useJokeListQuery(options: Omit<Urql.UseQueryArgs<JokeListQueryVariables>, 'query'>) {
-  return Urql.useQuery<JokeListQuery, JokeListQueryVariables>({ query: JokeListDocument, ...options });
-};
 
 
 export type ResolverTypeWrapper<T> = Promise<T> | T;

@@ -3,6 +3,7 @@ import styles from "./layout.module.css";
 import Image from "next/image";
 import profilePic from "../public/profilePic.jpg";
 import ProjectLayout from "./ProjectLayout";
+import TrpcWrapper from "./TrpcWrapper"
 export default function RootLayout({
   children,
 }: {
@@ -58,7 +59,11 @@ export default function RootLayout({
                       <h1>Porfolio</h1>
                     </div>
                     {/* <Overview /> */}
-                    <ProjectLayout>{children}</ProjectLayout>
+                    <ProjectLayout>
+                      <TrpcWrapper>
+<{children}
+                      </TrpcWrapper>
+                      </ProjectLayout>
 
                     <div className="footer"></div>
                   </div>
